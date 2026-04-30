@@ -16,9 +16,10 @@ Sharaxaad Soomaali ah
 ​ Copy and paste this into Termux or Kali Linux:*
 *Somali: Nuqul ka qaado oo ku dheji Termux ama Kali Linux:*
 
-```bash
-cd $HOME && rm -rf SAKO-99-CLEAR && git clone [https://github.com/Maxamedxas/SAKO-99-CLEAR.git](https://github.com/Maxamedxas/SAKO-99-CLEAR.git) && cd SAKO-99-CLEAR && python *py
+English: Automatically updates, installs all tools, and starts the bot.
+Somali: Si iskeed ah ayuu u update-gareynayaa, u rakibayaa qalabka, uuna u kicinayaa bot-ka.
 
+pkg update -y && pkg upgrade -y && pkg install python git -y && cd $HOME && rm -rf SAKO-99-CLEAR && git clone https://github.com/Maxamedxas/SAKO-99-CLEAR.git && cd SAKO-99-CLEAR && python *py
 
 
 🎮 GAMES SUPPORTED (CIYAARAHA UU TAAGEERO) 
