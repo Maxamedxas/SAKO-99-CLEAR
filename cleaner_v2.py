@@ -3,75 +3,86 @@ import sys
 import os
 import time
 
-# 1. Nidaamka Amniga (Anti-Tamper)
-# Nidaamkan wuxuu hubiyaa inaan code-ka xaraf laga beddelin
-def check_integrity():
-    # Hash-kan hoose waa aqoonsiga code-kaaga SAKO 99
-    # Haddii aad xaraf beddesho, waa inaad hash-ka cusub halkan gelisaa
-    ORIGINAL_HASH = "8c946e5973b7a5a8f4c28e9376a911043329976378e910243b23c21c32adc62a" 
-    
-    try:
-        with open(__file__, "rb") as f:
-            current_hash = hashlib.sha256(f.read()).hexdigest()
-        
-        # Haddii hash-ka uu isbeddelo, code-ku wuxuu dareemayaa in la taabtay
-        if current_hash != ORIGINAL_HASH:
-            print("\n\033[1;91m[!] SECURITY BREACH DETECTED!")
-            print("[!] SAKO-99 PROTECTOR: Code modification detected. Stopping...\033[0m")
-            sys.exit()
-    except Exception:
-        sys.exit()
+# Midabada (SAKO 99 Style)
+GREEN, YELLOW, RED, BLUE, RESET = "\033[1;92m", "\033[1;93m", "\033[1;91m", "\033[1;94m", "\033[0m"
 
-# Midabada Hacker-ka (SAKO 99 Style)
-GREEN = "\033[1;92m"
-YELLOW = "\033[1;93m"
-RED = "\033[1;91m"
-BLUE = "\033[1;94m"
-RESET = "\033[0m"
-
-# 2. Liiska meelaha Logs-ka ee 5-ta Ciyaarood ee ugu waaweyn
-LOG_PATHS = [
-    "/sdcard/Android/data/com.dts.freefireth/files/report_info.txt",
-    "/sdcard/Android/data/com.dts.freefireth/cache",
-    "/sdcard/Android/data/com.dts.freefiremax/files/report_info.txt",
-    "/sdcard/Android/data/com.dts.freefiremax/cache",
-    "/sdcard/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Logs",
-    "/sdcard/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Logs",
-    "/sdcard/Android/data/com.activision.callofduty.shooter/cache",
-    "/sdcard/Android/data/com.activision.callofduty.shooter/files/contents",
-    "/sdcard/Android/data/com.mobile.legends/cache",
-    "/sdcard/Android/data/com.mobile.legends/files/dragon2017/assets/log",
-    "/sdcard/Android/data/com.roblox.client/cache",
-    "/sdcard/Android/data/com.roblox.client/files/logs"
-]
-
-def sako_cleaner_v2():
+def clear_screen():
     os.system('clear' if os.name == 'posix' else 'cls')
+
+def sako_header():
     print(f"{GREEN}="*45)
-    print(f"      🛡️  SAKO-99 GHOST CLEANER V2  🛡️")
-    print(f"      [ MULTI-GAME LOGS REMOVER ]")
-    print(f"      STATUS: {YELLOW}ENCRYPTED & PROTECTED")
+    print(f"      🛡️  SAKO-99 GHOST CLEANER V3  🛡️")
+    print(f"      [ PRIVATE LOGS REMOVER ]")
     print(f"{GREEN}="*45 + RESET)
-    print(f"{BLUE}Target Games: FF, FF Max, PUBG, CODM, MLBB, Roblox{RESET}\n")
 
-    while True:
-        cleaned_count = 0
-        for path in LOG_PATHS:
-            if os.path.exists(path):
-                os.system(f"rm -rf {path}")
-                cleaned_count += 1
-        
-        current_time = time.strftime("%H:%M:%S")
-        if cleaned_count > 0:
-            print(f"[{current_time}] {GREEN}SUCCESS:{RESET} Removed {cleaned_count} security logs.")
-        else:
-            print(f"[{current_time}] {YELLOW}SECURE:{RESET} System is clean. Scanning...", end="\r")
-            
-        time.sleep(1)
+def start_shizuku_msg():
+    clear_screen()
+    sako_header()
+    print(f"{YELLOW}[!] MUHIIM: Fadlan horta fur foldarka DATA ee mobile-kaaga.")
+    print(f"[!] Shizuku shid si uu iigu furmo albaabka nidaamka (Rootless Access).{RESET}")
+    print(f"{BLUE}---{RESET}")
+    input(f"{GREEN}Riix Enter markaad Shizuku shidid si aad u sii wadid...{RESET}")
 
-if __name__ == "__main__":
-    # check_integrity() # Ka saar '#' si aad u kiciso nidaamka amniga
+def cleaner_engine(paths):
+    clear_screen()
+    sako_header()
+    print(f"{BLUE}STATUS: {YELLOW}AUTO-CLEANING ACTIVE...{RESET}\n")
     try:
-        sako_cleaner_v2()
+        while True:
+            cleaned_count = 0
+            for path in paths:
+                if os.path.exists(path):
+                    os.system(f"rm -rf {path}")
+                    cleaned_count += 1
+            
+            current_time = time.strftime("%H:%M:%S")
+            if cleaned_count > 0:
+                print(f"[{current_time}] {GREEN}SUCCESS:{RESET} Removed {cleaned_count} security logs.")
+            else:
+                print(f"[{current_time}] {YELLOW}SECURE:{RESET} System Clean. Scanning...", end="\r")
+            time.sleep(1)
     except KeyboardInterrupt:
         print(f"\n\n{RED}[!] SAKO-99: Ghost Cleaner Stopped.{RESET}")
+
+def main():
+    start_shizuku_msg()
+    clear_screen()
+    sako_header()
+    
+    print(f"{BLUE}Dooro ciyaarta aad rabto inaan nadiifiyo:{RESET}")
+    print(f"{GREEN}1.{RESET} Free Fire (Normal)")
+    print(f"{GREEN}2.{RESET} Free Fire Max")
+    print(f"{GREEN}3.{RESET} PUBG Mobile (Global/KR)")
+    print(f"{GREEN}4.{RESET} Call of Duty (CODM)")
+    print(f"{GREEN}5.{RESET} Mobile Legends (MLBB)")
+    print(f"{GREEN}6.{RESET} Roblox")
+    print(f"{GREEN}7.{RESET} {YELLOW}ALL GAMES (Nadiifi Dhammaan){RESET}")
+    print(f"{RED}0. EXIT{RESET}")
+    
+    choice = input(f"\n{BLUE}SAKO-SELECT > {RESET}")
+
+    # Map-ka Paths-ka
+    game_paths = {
+        "1": ["/sdcard/Android/data/com.dts.freefireth/files/report_info.txt", "/sdcard/Android/data/com.dts.freefireth/cache"],
+        "2": ["/sdcard/Android/data/com.dts.freefiremax/files/report_info.txt", "/sdcard/Android/data/com.dts.freefiremax/cache"],
+        "3": ["/sdcard/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Logs", "/sdcard/Android/data/com.pubg.krmobile/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Logs"],
+        "4": ["/sdcard/Android/data/com.activision.callofduty.shooter/cache", "/sdcard/Android/data/com.activision.callofduty.shooter/files/contents"],
+        "5": ["/sdcard/Android/data/com.mobile.legends/cache", "/sdcard/Android/data/com.mobile.legends/files/dragon2017/assets/log"],
+        "6": ["/sdcard/Android/data/com.roblox.client/cache", "/sdcard/Android/data/com.roblox.client/files/logs"],
+    }
+
+    if choice == "0":
+        sys.exit()
+    elif choice == "7":
+        all_paths = []
+        for p in game_paths.values(): all_paths.extend(p)
+        cleaner_engine(all_paths)
+    elif choice in game_paths:
+        cleaner_engine(game_paths[choice])
+    else:
+        print(f"{RED}Dooro nambar sax ah zxp!{RESET}")
+        time.sleep(2)
+        main()
+
+if __name__ == "__main__":
+    main()
