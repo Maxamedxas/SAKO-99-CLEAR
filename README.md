@@ -1,21 +1,69 @@
-SAKO-99 GHOST CLEANER V5
-​🛡️ THE ULTIMATE ANTI-BAN SYSTEM
-​ Description
-​This powerful tool is designed for professional gamers to protect their accounts from bans. It automatically monitors and clears game logs, cache files, and tracking data every second. It features a high-end Anti-Tamper system to ensure code integrity and supports the most popular mobile games globally.
-Created by: SAKO 99
-​
+SAKO-99 GHOST CLEANER V5 🛡️
+​[ THE ULTIMATE ANTI-BAN & LOGS REMOVER ]
+​🇬🇧 English Description
+​SAKO-99 GHOST CLEANER is a professional automation tool designed for gamers to protect their accounts from bans. It monitors and clears security logs, cache files, and tracking data in real-time.
+​Anti-Tamper System: Protects the code from modification.
+​24/7 Monitoring: Cleans logs every second.
+​Dual Language: Supports both English and Somali.
 
 
-​Mashiinkan xoogga badan waxaa loogu talagalay ciyaartoyda xirfadleyda ah si looga ilaaliyo account-yadooda in la xiro (Ban). Wuxuu si toos ah u tirtiraa Logs-ka ciyaarta, Cache-ga, iyo xogta ay shirkadaha ciyaaraha ku raad-raacaan ilbiriqsi kasta. Waxaa ku dhex jira nidaamka Anti-Tamper oo loogu talagalay ammaanka koodka, wuxuuna taageeraa ciyaaraha ugu caansan aduunka.
-Waxaa sameeyay: SAKO 99
-​🚀 HAL AMAR KU KICI (ONE-CLICK INSTALL)
-​Copy and paste this command into your Termux or Linux Terminal:
+Sharaxaad Soomaali ah 
+
+​SAKO-99 GHOST CLEANER waa mashiin casri ah oo loogu talagalay ciyaartoyda si looga ilaaliyo account-yadooda in la xiro (Ban). Wuxuu si toos ah u tirtiraa Logs-ka ciyaarta iyo faylasha ay shirkaduhu ku raad-raacaan.
+
+​Nidaamka Anti-Tamper: Wuxuu difaacayaa koodka si aan wax laga beddelin. ​Ilaalin Joogto ah: Wuxuu tirtiraa logs-ka ilbiriqsi kasta. ​Labo Luqadood: Interface-ka wuxuu ku hadlaa English iyo Somali. ​🚀 HAL AMAR KU KICI (ONE-CLICK INSTALL) 
+
+​Copy and paste this command into your Termux:
+
 pkg update && pkg upgrade -y && pkg install python git -y && git clone https://github.com/Maxamedxas/SAKO-99-CLEAR.git && cd SAKO-99-CLEAR && python cleaner_v2.py
 
-GAMES SUPPORTED (CIYAARAHA UU TAAGEERO) ​✅ FREE FIRE (Normal & Max) ​✅ PUBG MOBILE (Global & KR) ​✅ CALL OF DUTY (CODM) ​✅ MOBILE LEGENDS ​✅ ROBLOX ​✅ LUDO KING ​🛠️ KEY FEATURES (AALADAHA MUHIIMKA AH) ​🇬🇧 Dual Language: English & Somali interface. ​🇸🇴 Labo Luqadood: Interface ku hadlaya English iyo Somali. ​🇬🇧 Anti-Tamper: Secure code protection. ​🇸🇴 Ammaanka Koodka: Nidaamka Anti-Tamper oo koodka difaacaya. ​🇬🇧 24/7 Monitoring: Real-time log cleaning. ​🇸🇴 Ilaalin Joogto ah: Nadiifin logs-ka ah 24-ka saac. 
 
-​⚠️ NOTE / MUHIIM: 🇬🇧 Make sure to enable Shizuku or grant Data folder access for full protection.
+🎮 GAMES SUPPORTED (CIYAARAHA UU TAAGEERO) 
 
-🇸🇴 Hubi inaad shiddo Shizuku ama aad ogolaato gelidda folder-ka Data si bot-ku u shaqeeyo.
+GAME
+
+STATUS
+
+✅ FREE FIRE (Normal & Max)
+
+ACTIVE
+
+✅ PUBG MOBILE (Global & KR)
+
+ACTIVE
+
+✅ COD MOBILE (CODM)
+
+ACTIVE
+
+✅ MOBILE LEGENDS
+
+ACTIVE
+
+✅ ROBLOX
+
+ACTIVE
+
+✅ LUDO KING
+
+ACTIVE
+
+🛠️ REQUIREMENTS (WAA INAAD HAYSTAA)
+​Termux App
+​Shizuku App (To open the /Android/data folder gate).
+​Internet Connection
+​💡 HOW TO USE / SIDA LOO ISTIFAALO
+​🇬🇧 English: Copy the command above, paste it in Termux, then choose your game from the menu.
+​🇸🇴 Somali: Nuqul ka qaado amarka kore, ku dheji Termux, ka dibna menu-ka ka dooro ciyaarta aad rabto.
+​Developer: SAKO 99 🇸🇴
+Safety First. Play Hard. SAKO 99 Style.
+​🛠️ Sida aad GitHub-ka ugu xareyso:
+​Fur repository-gaaga SAKO-99-CLEAR.
+​Guji file-ka la yiraahdo README.md.
+​Tirtir qoraalka dhexdiisa ah, ka dibna ku dhex raddel (Paste) qoraalkan kore.
+​Guji Commit changes... si uu u badbaado.
+
+
+
 
 
