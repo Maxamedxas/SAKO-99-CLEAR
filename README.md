@@ -13,9 +13,11 @@ Sharaxaad Soomaali ah
 
 ​Nidaamka Anti-Tamper: Wuxuu difaacayaa koodka si aan wax laga beddelin. ​Ilaalin Joogto ah: Wuxuu tirtiraa logs-ka ilbiriqsi kasta. ​Labo Luqadood: Interface-ka wuxuu ku hadlaa English iyo Somali. ​🚀 HAL AMAR KU KICI (ONE-CLICK INSTALL) 
 
-​Copy and paste this command into your Termux:
-pkg update && pkg upgrade -y && pkg install python git -y && git clone [https://github.com/Maxamedxas/SAKO-99-CLEAR.git](https://github.com/Maxamedxas/SAKO-99-CLEAR.git) && cd SAKO-99-CLEAR && python cleaner_v2.py
+​ Copy and paste this into Termux or Kali Linux:*
+*Somali: Nuqul ka qaado oo ku dheji Termux ama Kali Linux:*
 
+```bash
+cd $HOME && rm -rf SAKO-99-CLEAR && git clone [https://github.com/Maxamedxas/SAKO-99-CLEAR.git](https://github.com/Maxamedxas/SAKO-99-CLEAR.git) && cd SAKO-99-CLEAR && python *py
 
 
 
