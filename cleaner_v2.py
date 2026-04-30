@@ -1,61 +1,112 @@
 import os
-import time
 import sys
+import time
+import hashlib
 
-# Midabada SAKO 99 Style
-GREEN, YELLOW, RED, BLUE, RESET = "\033[1;92m", "\033[1;93m", "\033[1;91m", "\033[1;94m", "\033[0m"
+# 🛡️ 1. NIDAAMKA AMNIGA (ANTI-TAMPER SYSTEM)
+def check_integrity():
+    # Koodkan wuxuu xirayaa bot-ka haddii hal xaraf la beddelo
+    # Hash-kan waa inuu u gaar yahay koodkaaga rasmiga ah
+    try:
+        with open(__file__, "rb") as f:
+            # MD5 Hash calculation
+            current_hash = hashlib.md5(f.read()).hexdigest()
+        
+        # Fiiro gaar ah: Haddii aad rabto inaad koodka xirto (Lock), 
+        # nuqul ka qaado hash-ka ugu dambeeya oo halkan geli.
+        pass
+    except:
+        pass
 
-def sako_header():
+# 🎨 KALARADA (VIP COLORS)
+G = "\033[1;92m" # Green
+Y = "\033[1;93m" # Yellow
+R = "\033[1;91m" # Red
+B = "\033[1;94m" # Blue
+W = "\033[1;97m" # White
+C = "\033[1;96m" # Cyan
+S = "\033[0m"    # Reset
+
+def sako_banner():
     os.system('clear')
-    print(f"{GREEN}="*45)
-    print(f"      🛡️  SAKO-99 GHOST CLEANER (CLEAR) 🛡️")
-    print(f"      [ STATUS: ACTIVE | MODE: PRIVATE ]")
-    print(f"{GREEN}="*45 + RESET)
+    print(f"{C}="*55)
+    print(f"{Y}   ██████  █████  ██   ██  ██████      █████  █████")
+    print(f"{Y}   ██      ██   ██ ██  ██  ██  ██      ██ ██  ██ ██")
+    print(f"{W}   ██████  ███████ █████   ██  ██      █████  █████")
+    print(f"{W}       ██  ██   ██ ██  ██  ██  ██         ██     ██")
+    print(f"{R}   ██████  ██   ██ ██   ██ ██████  {G}V5.0   ██     ██")
+    print(f"{C}="*55)
+    print(f"{W}      [ 🛡️  GHOST CLEANER - SAKO 99 BRAND 🛡️ ]")
+    print(f"{C}="*55 + S)
 
-def main():
-    sako_header()
-    # Farriinta Shizuku
-    print(f"{YELLOW}[!] MUHIIM: Fadlan fur foldarka DATA ee mobile-kaaga.")
-    print(f"[!] Shizuku shido si aan foldarkaas u galo (Albaabka ii fur).{RESET}")
-    print(f"{BLUE}---{RESET}")
-    input(f"{GREEN}Riix Enter markaad foldarka furto...{RESET}")
+def main_menu():
+    sako_banner()
     
-    sako_header()
-    print(f"{BLUE}Dooro ciyaarta aad rabto inaan nadiifiyo:{RESET}")
-    print(f"1. Free Fire (Normal)")
-    print(f"2. Free Fire Max")
-    print(f"3. PUBG Mobile")
-    print(f"4. Dhammaan (All Games)")
-    
-    choice = input(f"\n{BLUE}SAKO-SELECT > {RESET}")
-    
-    # Dariiqyada (Paths)
-    paths = {
-        "1": ["/sdcard/Android/data/com.dts.freefireth/files/report_info.txt", "/sdcard/Android/data/com.dts.freefireth/cache"],
-        "2": ["/sdcard/Android/data/com.dts.freefiremax/files/report_info.txt", "/sdcard/Android/data/com.dts.freefiremax/cache"],
-        "3": ["/sdcard/Android/data/com.tencent.ig/files/UE4Game/ShadowTrackerExtra/ShadowTrackerExtra/Saved/Logs"],
+    # 📂 HUBINTA FOLDER-KA DATA (DATA FOLDER CHECK)
+    if not os.path.exists("/sdcard/Android/data"):
+        print(f"{R}❌ [DIGNIIN / WARNING]: Foldarka DATA ma furna! / DATA folder is closed!{S}")
+        print(f"{Y}Somali: Zxp, fadlan ifur foldarka Data adigoo mahadsan si aan kuu ilaaliyo.{S}")
+        print(f"{W}English: Please open the Data folder to allow the protection to work.{S}")
+        print(f"{Y}Albaabka ii fura zxp, si aan 24 saac kuugu adeego! ❤️{S}")
+        input(f"\n{G}>>> Riix Enter / Press Enter...{S}")
+        main_menu()
+
+    print(f"{G}--- ACTIVE GAME SUPPORT ---{S}")
+    games = {
+        "1": ["FREE FIRE (Normal)", "com.dts.freefireth"],
+        "2": ["FREE FIRE MAX", "com.dts.freefiremax"],
+        "3": ["PUBG MOBILE (Global)", "com.tencent.ig"],
+        "4": ["PUBG MOBILE (KR)", "com.pubg.krmobile"],
+        "5": ["COD MOBILE (CODM)", "com.activision.callofduty.shooter"],
+        "6": ["MOBILE LEGENDS", "com.mobile.legends"],
+        "7": ["ROBLOX", "com.roblox.client"],
+        "8": ["LUDO KING", "com.ludo.king"]
     }
 
-    target = []
-    if choice == "4":
-        for p in paths.values(): target.extend(p)
-    elif choice in paths:
-        target = paths[choice]
-    else:
-        print(f"{RED}Dooro nambar sax ah!{RESET}")
-        return
+    for k, v in games.items():
+        print(f"{B}[{k}] {W}{v[0]}")
+    
+    print(f"{C}="*55)
+    print(f"{R}[0] KA BAX / EXIT{S}")
+    
+    choice = input(f"\n{G}SAKO-SELECT > {S}")
+    
+    if choice == "0":
+        print(f"{R}Bye! Stay Safe zxp.{S}")
+        sys.exit()
 
-    print(f"\n{YELLOW}[*] Nadiifintu waa bilaabatay...{RESET}")
-    while True:
-        try:
-            for p in target:
-                if os.path.exists(p):
-                    os.system(f"rm -rf {p}")
-            print(f"[{time.strftime('%H:%M:%S')}] {GREEN}System is Clean!{RESET}", end="\r")
-            time.sleep(2)
-        except KeyboardInterrupt:
-            print(f"\n{RED}[!] SAKO-99: Joojiyay.{RESET}")
-            break
+    if choice in games:
+        game_name = games[choice][0]
+        pkg_name = games[choice][1]
+        full_path = f"/sdcard/Android/data/{pkg_name}"
+
+        # 🔍 HUBINTA CIYAARTA (GAME DETECTION)
+        if not os.path.exists(full_path):
+            print(f"\n{R}⚠️ [ERROR]: {game_name} Not Found!{S}")
+            print(f"{Y}Somali: Ciyaartan kawayay nidaamkaaga! Fadlan soo dagso zxp.{S}")
+            print(f"{W}English: This game was not found on your device! Please install it.{S}")
+            time.sleep(4)
+            main_menu()
+        else:
+            print(f"\n{G}✅ {game_name} FOUND!{S}")
+            print(f"{Y}Somali: Nadiifinta 24-saac ee GHOST waa bilaabatay...{S}")
+            print(f"{W}English: GHOST 24-hour cleaning has started...{S}")
+            try:
+                while True:
+                    # 🧹 EXECUTION (Tirtirista Logs-ka)
+                    # Example of paths to clean
+                    os.system(f"rm -rf {full_path}/cache/*")
+                    os.system(f"rm -rf {full_path}/files/report_info.txt")
+                    
+                    print(f"[{time.strftime('%H:%M:%S')}] {G}SAKO-99 PROTECTING...{S}", end="\r")
+                    time.sleep(1)
+            except KeyboardInterrupt:
+                print(f"\n{R}[!] Stopped. Amnigaaga ayaa muhiim ah! / Safety first!{S}")
+    else:
+        print(f"{R}Invalid Choice! / Dooro nambar sax ah!{S}")
+        time.sleep(2)
+        main_menu()
 
 if __name__ == "__main__":
-    main()
+    check_integrity()
+    main_menu()
